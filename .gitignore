@@ -1,20 +1,41 @@
-# Unreal Engine
-*.pdb
-*.obj
-*.exe
-*.log
-*.sav
-*.tmp
-*.db
-*.ilk
-*.idb
-*.user
-*.userprefs
+# Ignore Intermediate and Derived Data Cache
+/Intermediate/
+/Saved/
+/DerivedDataCache/
+
+# Ignore Build directories
+/Build/
+
+# Ignore Binaries
+/Binaries/
+
+# Ignore Visual Studio files
+*.VC.db
+*.VC.opendb
 *.suo
-*.sln
-DerivedDataCache/
-Intermediate/
-Saved/
-.vscode/
-.idea/
-Binaries/
+*.user
+*.ncb
+*.log
+*.tlb
+*.pch
+*.sdf
+*.ipch
+*.aps
+*.obj
+*.o
+*.idb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.app
+*.ipa
+*.dSYM/
+*.log
+*.dat
+*.tmp
+*.pyc
+
+# Ignore MacOS files
+.DS_Store
