@@ -1,75 +1,20 @@
-# Ignore the intermediate files and build outputs
-Binaries/
+# Unreal Engine
+*.pdb
+*.obj
+*.exe
+*.log
+*.sav
+*.tmp
+*.db
+*.ilk
+*.idb
+*.user
+*.userprefs
+*.suo
+*.sln
 DerivedDataCache/
 Intermediate/
 Saved/
-Build/
-
-# Ignore config files generated for users
-*.VC.db
-*.VC.VC.opendb
-
-# Ignore IDE-specific files
 .vscode/
 .idea/
-*.suo
-*.user
-*.userosscache
-*.users
-*.sln
-
-# Ignore compiled binaries
-*.pdb
-*.exe
-*.dll
-*.app
-*.dylib
-*.icns
-*.ilk
-*.log
-*.obj
-*.lib
-*.swp
-*.idb
-*.opendb
-
-# Ignore auto-generated files from Unreal
-*.log
-*.dump
-*.exp
-*.ipdb
-*.iobj
-
-# Ignore cached assets
-DerivedDataCache/
-*.dds
-*.tga
-*.uasset
-*.umap
-
-# Ignore temporary files
-Thumbs.db
-.DS_Store
-*.tmp
-*.temp
-~*
-
-# Ignore optional files
-Saved/
-
-# Ignore plugin-specific intermediate files
-Plugins/*/Intermediate/
-
-# Ignore automation scripts or build tools
-AutomationScripts/
-BuildGraph/
-SourceControl/
-
-# Ignore platform-specific binaries
-*.apk
-*.ipa
-*.xcworkspace
-*.xcuserstate
-
-# Ignore Unreal Engine 5-specific files (if applicable)
-.nametable
+Binaries/
