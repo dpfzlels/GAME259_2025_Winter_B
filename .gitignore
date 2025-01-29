@@ -69,6 +69,8 @@ Saved/*
 # Compiled source files for the engine to use
 BTeamProjectTilde/Intermediate/*
 BTeamProjectTilde/Plugins/**/Intermediate/*
+BTeamProjectTilde/Binaries/*
+BTeamProjectTilde/Saved/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
