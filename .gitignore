@@ -319,3 +319,6 @@ RELEASE_MSG
 # Linux project files
 /Makefile
 /.ignore
+/BTeamProjectTilde/Intermediate
+/BTeamProjectTilde/Saved
+/BTeamProjectTilde/Binaries
