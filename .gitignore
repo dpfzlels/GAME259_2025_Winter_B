@@ -72,3 +72,30 @@ BTeamProjectTilde/Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 BTeamProjectTilde/DerivedDataCache/*
+
+# Blueprint class metadata
+BTeamProjectTilde/Content/*.uasset
+BTeamProjectTilde/Content/**/*_BuiltData.uasset
+
+# Editor-specific files
+BTeamProjectTilde/Saved/Config/
+BTeamProjectTilde/Saved/Cooked/
+BTeamProjectTilde/Saved/Staging/
+
+# Asset registry
+BTeamProjectTilde/Intermediate/AssetRegistry/
+
+# Editor cache
+BTeamProjectTilde/Saved/EditorCache/
+
+# Build configuration
+BTeamProjectTilde/Build/Config/
+
+# Keep these specific files
+!BTeamProjectTilde/Content/**/*.uasset
+!BTeamProjectTilde/Content/**/*_C.uasset
+!BTeamProjectTilde/Content/**/*_BuiltData.uasset
+
+# Project files
+!BTeamProjectTilde/*.uproject
+!BTeamProjectTilde/*.target.cs
