@@ -98,4 +98,4 @@ BTeamProjectTilde/Build/Config/
 
 # Project files
 !BTeamProjectTilde/*.uproject
-!BTeamProjectTilde/Source/*.target.cs
+!BTeamProjectTilde/Source/*.[Tt]arget.cs
