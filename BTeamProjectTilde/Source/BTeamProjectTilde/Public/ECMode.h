@@ -3,13 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ECMode.generated.h"  
 
-/**
- * 
- */
-class BTEAMPROJECTTILDE_API ECMode
+UENUM(BlueprintType)  // Enables use in Blueprints
+enum class ECMode : uint8
 {
-public:
-	ECMode();
-	~ECMode();
+    OneCamera   UMETA(DisplayName = "One Camera"),
+    TwoCameras  UMETA(DisplayName = "Two Cameras"),
+    FourCameras UMETA(DisplayName = "Four Cameras")
 };

@@ -2,11 +2,3 @@
 
 
 #include "ECMode.h"
-
-ECMode::ECMode()
-{
-}
-
-ECMode::~ECMode()
-{
-}
