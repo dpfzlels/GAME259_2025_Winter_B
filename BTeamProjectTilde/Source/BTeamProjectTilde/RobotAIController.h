@@ -22,11 +22,15 @@ class BTEAMPROJECTTILDE_API ARobotAIController : public AAIController
 
 private:
     bool bIsMovementDisabled;
-
+    FRotator CurrentWorldRotation;
+    int i = 0;
 protected:
     virtual void BeginPlay() override;
 
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    mutable UStaticMeshComponent* forwardFacingMeshObj = nullptr;
+
     ARobotAIController();
 
     // Movement intention functions
