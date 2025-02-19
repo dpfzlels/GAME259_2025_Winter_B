@@ -21,7 +21,7 @@ void ACharacterAI::GetActorEyesViewPoint(FVector& OutLocation, FRotator& OutRota
     if (headMesh == nullptr) {
         for (UActorComponent* Component : Components)
         {
-            if (Component->GetName().Contains(TEXT("RobotAIHead")))
+            if (Component->GetName().Contains(TEXT("SM_LightVillanHead_KSJH1")))
             {
                 //UE_LOG(LogTemp, Display, TEXT("Found Cube component"));
 
@@ -52,6 +52,7 @@ void ACharacterAI::GetActorEyesViewPoint(FVector& OutLocation, FRotator& OutRota
                 //headMesh->AddLocalRotation(FQuat(0.0, 0.0, 1.0, 0.00000000001));
                 //OutRotation = GetActorQuat().Rotator();
                 OutRotation = headMesh->GetComponentRotation();
+                OutRotation.Yaw = OutRotation.Yaw - 90;
                 //break;
             }
         //}
@@ -85,3 +86,26 @@ void ACharacterAI::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+//phind (ai) helped solve this
+float ACharacterAI::GetMidpoint(float AngleA, float AngleB) {
+    // Normalize angles to [-180, 180] range
+    float NormA = FMath::UnwindDegrees(AngleA);
+    float NormB = FMath::UnwindDegrees(AngleB);
+
+    // Calculate the shortest path between angles
+    float Delta = NormB - NormA;
+    if (Delta > 180.f)
+    {
+        NormB -= 360.f;
+    }
+    else if (Delta < -180.f)
+    {
+        NormB += 360.f;
+    }
+
+    // Calculate midpoint
+    float Result = (NormA + NormB) / 2.f;
+
+    // Normalize result to [-180, 180] range
+    return FMath::UnwindDegrees(Result);
+}

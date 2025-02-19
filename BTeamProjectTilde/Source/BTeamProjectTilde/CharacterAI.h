@@ -18,6 +18,9 @@ public:
 	mutable FRotator headRotation;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	mutable double headAngle = 0.0;
+
+	UFUNCTION(BlueprintCallable, Category = "Math")
+	float GetMidpoint(float AngleA, float AngleB);
 	// Sets default values for this character's properties
 	ACharacterAI();
 
