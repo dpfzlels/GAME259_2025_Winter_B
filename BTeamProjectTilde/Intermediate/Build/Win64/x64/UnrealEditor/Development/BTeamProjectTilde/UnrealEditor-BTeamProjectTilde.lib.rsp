@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-BTeamProjectTilde.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\BTeamProjectTildeEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTildeGameMode.gen.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTildeCharacter.gen.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTilde.init.gen.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTilde.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTildeCharacter.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\BTeamProjectTildeGameMode.cpp.obj"
+"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\Default.rc2.res"
+/OUT:"E:\(Current)_Sem4_3DAnmn\Animated_Short\GAME259_2025_Winter_B\BTeamProjectTilde\Intermediate\Build\Win64\x64\UnrealEditor\Development\BTeamProjectTilde\UnrealEditor-BTeamProjectTilde.lib"
