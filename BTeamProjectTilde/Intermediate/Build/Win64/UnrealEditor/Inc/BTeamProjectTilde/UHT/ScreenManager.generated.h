@@ -9,12 +9,24 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UContainerWidget;
+class UUserWidget;
+class UWidget;
+enum class ECMode : uint8;
 #ifdef BTEAMPROJECTTILDE_ScreenManager_generated_h
 #error "ScreenManager.generated.h already included, missing '#pragma once' in ScreenManager.h"
 #endif
 #define BTEAMPROJECTTILDE_ScreenManager_generated_h
 
-#define FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execCleanUp); \
+	DECLARE_FUNCTION(execAddUIWidgetToScreen); \
+	DECLARE_FUNCTION(execUpdateLayout); \
+	DECLARE_FUNCTION(execIniScreenManager); \
+	DECLARE_FUNCTION(execSetMode);
+
+
+#define FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUScreenManager(); \
 	friend struct Z_Construct_UClass_UScreenManager_Statics; \
@@ -23,9 +35,7 @@ public: \
 	DECLARE_SERIALIZER(UScreenManager)
 
 
-#define FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UScreenManager(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+#define FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UScreenManager(UScreenManager&&); \
@@ -33,16 +43,17 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UScreenManager); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UScreenManager); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UScreenManager) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UScreenManager) \
 	NO_API virtual ~UScreenManager();
 
 
-#define FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_12_PROLOG
-#define FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_GENERATED_BODY \
+#define FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_PROLOG
+#define FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +61,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BTEAMPROJECTTILDE_API UClass* StaticClass<class UScreenManager>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h
+#define CURRENT_FILE_ID FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
