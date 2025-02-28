@@ -30,4 +30,10 @@ public:
 
 	UFUNCTION()
 	void SetRenderTarget(UTextureRenderTarget2D* renderTarget_);
+
+	UFUNCTION()
+	UTextureRenderTarget2D* GetRenderTarget();
+
+	UFUNCTION()
+	void SwitchRenderTarget(UTextureRenderTarget2D* newTarget);
 };

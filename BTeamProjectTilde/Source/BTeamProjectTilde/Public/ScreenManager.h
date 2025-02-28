@@ -9,6 +9,7 @@
 class UCamWidget;
 class UContainerWidget;
 enum class ECMode : uint8;
+
 /**
  *
  */
@@ -27,11 +28,16 @@ private:
 	TArray<UCamWidget*> ArrCamerasArray;
 
 	UPROPERTY()
-	TArray<AActor*> ArrCameras;
-
-
-	UPROPERTY()
 	UContainerWidget* pContainer;
+
+	UPROPERTY() // Map to keep Track and look up cameras to their render targets
+		TMap<AActor*, UTextureRenderTarget2D*> CameraTargetMap;
+
+	UPROPERTY()// Map to keep Track and look up Camera Widegts to player Ids
+		TMap<int, UCamWidget*> PlayerToWidgetMap;
+
+	UPROPERTY() // Map to keep track of multiple camera switches.
+		TMap<int, UTextureRenderTarget2D*> PreviousTargets;
 public:
 	UScreenManager();
 
@@ -63,5 +69,13 @@ public:
 	//Memory clean Up in case it is needed
 	UFUNCTION()
 	void CleanUp();
+
+	UFUNCTION(BlueprintCallable, Category = "Spilt Screen")
+	void SwitchInCamera(AActor* Camera, int playerId);
+
+	UFUNCTION(BlueprintCallable, Category = "Spilt Screen")
+	void SwitchBackCamera(int playerId);
+
+
 
 };

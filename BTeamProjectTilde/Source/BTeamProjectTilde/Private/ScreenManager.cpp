@@ -25,83 +25,98 @@ void UScreenManager::SetMode(ECMode mode)
 
 void UScreenManager::IniScreenManager(TSubclassOf<UUserWidget> InWidgetBP, TSubclassOf<UContainerWidget> InWidgetBP2)
 {
-	cCameraTemplate = InWidgetBP;
-	cContainterTemplate = InWidgetBP2;
-	UE_LOG(LogTemp, Warning, TEXT("UScreenManager Start"));
+    cCameraTemplate = InWidgetBP;
+    cContainterTemplate = InWidgetBP2;
+    UE_LOG(LogTemp, Warning, TEXT("UScreenManager Start"));
 
-	pContainer = CreateWidget<UContainerWidget>(GetWorld(), cContainterTemplate);
-	if (pContainer) {
-		UE_LOG(LogTemp, Warning, TEXT("UContainerWidget was Created"));
+    pContainer = CreateWidget<UContainerWidget>(GetWorld(), cContainterTemplate);
+    if (pContainer) {
+        UE_LOG(LogTemp, Warning, TEXT("UContainerWidget was Created"));
 
-	}
-
-
-	switch (Currentmode)
-	{
-	case ECMode::OneCamera:
-	case ECMode::TwoCameras:
-		UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), FName("StaticCam"), ArrCameras);
-		for (auto actor : ArrCameras) {
-			USceneCaptureComponent2D* SceneCapture = actor->FindComponentByClass<USceneCaptureComponent2D>();
-
-			if (SceneCapture) {
-				UTextureRenderTarget2D* target = NewObject<UTextureRenderTarget2D>(this);
-				SceneCapture->TextureTarget = target;
-				target->InitAutoFormat(2024, 2024);
-				target->UpdateResource();
-
-				UCamWidget* CameraWidget = CreateWidget<UCamWidget>(GetWorld(), cCameraTemplate);
-				if (CameraWidget) {
-					CameraWidget->SetRenderTarget(target);
-
-					ArrCamerasArray.Add(CameraWidget);
-					ArrRenderTargets.Add(target);
-
-					pContainer->AddCameraWidget(CameraWidget);
-				}
-			}
-		}
-		break;
-	case ECMode::FourCameras:
-
-		UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), FName("Player"), ArrCameras);
-		for (auto actor : ArrCameras) {
-
-			UCameraComponent* CameraComp = actor->FindComponentByClass<UCameraComponent>();
-
-			USceneCaptureComponent2D* SceneCapture = nullptr;
-
-			for (USceneComponent* Child : CameraComp->GetAttachChildren())
-			{
-				SceneCapture = Cast<USceneCaptureComponent2D>(Child);
-				if (SceneCapture)
-				{
-					break;
-				}
-			}
+    }
 
 
-			if (SceneCapture) {
-				UTextureRenderTarget2D* target = NewObject<UTextureRenderTarget2D>(this);
-				SceneCapture->TextureTarget = target;
-				target->InitAutoFormat(1024, 1024);
-				target->UpdateResource();
+    TArray<AActor*> ArrCameras;
 
-				UCamWidget* CameraWidget = CreateWidget<UCamWidget>(GetWorld(), cCameraTemplate);
-				if (CameraWidget) {
-					CameraWidget->SetRenderTarget(target);
+    switch (Currentmode)
+    {
+    case ECMode::OneCamera:
+    case ECMode::TwoCameras:
+        UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), FName("StaticCam"), ArrCameras);
+        for (auto actor : ArrCameras) {
+            USceneCaptureComponent2D *SceneCapture = actor->FindComponentByClass<USceneCaptureComponent2D>();
 
-					ArrCamerasArray.Add(CameraWidget);
-					ArrRenderTargets.Add(target);
+            if (SceneCapture) {
+                UTextureRenderTarget2D* target = NewObject<UTextureRenderTarget2D>(this);
+                SceneCapture->TextureTarget = target;
+                target->InitAutoFormat(1012, 1012);
+                target->UpdateResource();
+                CameraTargetMap.Add(actor, target); // add it to the map;
 
-					pContainer->AddCameraWidget(CameraWidget);
-				}
-			}
-		}
-		break;
+                UCamWidget* CameraWidget = CreateWidget<UCamWidget>(GetWorld(), cCameraTemplate);
+                if (CameraWidget) {
+                    CameraWidget->SetRenderTarget(target);
 
-	}
+                    ArrCamerasArray.Add(CameraWidget);
+                    ArrRenderTargets.Add(target);
+
+                    pContainer->AddCameraWidget(CameraWidget);
+                }
+            }
+        }
+        break;
+    case ECMode::FourCameras:
+
+        UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), FName("Player"), ArrCameras);
+        for (auto actor : ArrCameras) {
+
+            UCameraComponent* CameraComp = actor->FindComponentByClass<UCameraComponent>();
+
+            USceneCaptureComponent2D* SceneCapture = nullptr;
+
+            for (USceneComponent* Child : CameraComp->GetAttachChildren())
+            {
+                SceneCapture = Cast<USceneCaptureComponent2D>(Child);
+                if (SceneCapture)
+                {
+                    break;
+                }
+            }
+
+
+            if (SceneCapture) {
+                UTextureRenderTarget2D* target;
+                if (CameraTargetMap.Contains(actor)) {
+                    target = CameraTargetMap[actor];
+                }
+                else {
+                    target = NewObject<UTextureRenderTarget2D>(this);
+                    SceneCapture->TextureTarget = target;
+                    target->InitAutoFormat(1012, 1012);
+                    target->UpdateResource();
+                    CameraTargetMap.Add(actor, target); // add it to the map;
+                }
+                UCamWidget* CameraWidget = CreateWidget<UCamWidget>(GetWorld(), cCameraTemplate);
+                if (CameraWidget) {
+                    CameraWidget->SetRenderTarget(target);
+
+                    ArrCamerasArray.Add(CameraWidget);
+                    ArrRenderTargets.Add(target);
+
+                    pContainer->AddCameraWidget(CameraWidget);
+                }
+            }
+        }
+        break;
+
+    }
+    // initilize widget to player id mapping
+    for (int i = 0; i < ArrCamerasArray.Num(); i++) {
+        PlayerToWidgetMap.Add(i, ArrCamerasArray[i]);
+    }
+
 }
+
 
 void UScreenManager::UpdateLayout()
 {
@@ -153,5 +168,39 @@ void UScreenManager::CleanUp()
 	{
 		pContainer->RemoveFromParent();
 		pContainer = nullptr;
+	}
+}
+
+void UScreenManager::SwitchInCamera(AActor* Camera, int playerId)
+{
+	UTextureRenderTarget2D* newtarget = nullptr;
+	if (CameraTargetMap.Contains(Camera)) {
+		newtarget = CameraTargetMap[Camera];
+	}
+	else {
+		USceneCaptureComponent2D* SceneCapture = Camera->FindComponentByClass<USceneCaptureComponent2D>();
+
+		if (SceneCapture) {
+			newtarget = NewObject<UTextureRenderTarget2D>(this);
+			SceneCapture->TextureTarget = newtarget;
+			newtarget->InitAutoFormat(1012, 1012);
+			newtarget->UpdateResource();
+			CameraTargetMap.Add(Camera, newtarget);
+		}
+	}
+
+	if (!PreviousTargets.Contains(playerId))
+	{
+		PreviousTargets.Add(playerId, PlayerToWidgetMap[playerId]->GetRenderTarget());
+	}
+	PlayerToWidgetMap[playerId]->SwitchRenderTarget(newtarget);
+
+}
+
+void UScreenManager::SwitchBackCamera(int playerId)
+{
+	if (PreviousTargets.Contains(playerId)) {
+		PlayerToWidgetMap[playerId]->SwitchRenderTarget(PreviousTargets[playerId]);
+		PreviousTargets.Remove(playerId);
 	}
 }

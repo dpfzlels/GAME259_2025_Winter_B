@@ -53,3 +53,20 @@ void UCamWidget::SetRenderTarget(UTextureRenderTarget2D* renderTarget_)
 	}
 	pRenderTarget = renderTarget_;
 }
+
+
+UTextureRenderTarget2D* UCamWidget::GetRenderTarget()
+{
+	return pRenderTarget;
+}
+
+void UCamWidget::SwitchRenderTarget(UTextureRenderTarget2D* newTarget)
+{
+	pRenderTarget = newTarget;
+
+	if (pRenderTargetMaterial && pRenderTarget) {
+
+		pRenderTargetMaterial->SetTextureParameterValue(FName("RenderTargetTexture"), pRenderTarget);
+		UE_LOG(LogTemp, Warning, TEXT("Switched the the material to the renderTaget"));
+	}
+}

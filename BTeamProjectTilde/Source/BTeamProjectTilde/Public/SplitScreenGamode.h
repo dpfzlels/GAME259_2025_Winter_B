@@ -49,4 +49,20 @@ public:
 	//Wrapper Function to add a UI Widget to the screen
 	UFUNCTION(BlueprintCallable, Category = "Spilt Screen")
 	void AddUIWidgetToScreen(UWidget* widget_, int Zorder, int viewPort);
+
+	//Wrapper Function to Switch a Camera Widget to the screen
+	UFUNCTION(BlueprintCallable, Category = "Spilt Screen")
+	void SwitchInCamera(AActor* Camera, int playerId);
+
+	//Wrapper Function to Switch Back Widget to the screen
+	UFUNCTION(BlueprintCallable, Category = "Spilt Screen")
+	void SwitchBackCamera(int playerId);
+
+private:
+
+	UFUNCTION()
+	int GetAssignedViewport(int PlayerID);
+
+	UFUNCTION()
+	int GetCameraViewport(int PlayerID);
 };

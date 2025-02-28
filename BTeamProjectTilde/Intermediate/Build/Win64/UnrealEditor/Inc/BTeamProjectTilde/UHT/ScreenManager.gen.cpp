@@ -221,6 +221,97 @@ DEFINE_FUNCTION(UScreenManager::execSetMode)
 }
 // End Class UScreenManager Function SetMode
 
+// Begin Class UScreenManager Function SwitchBackCamera
+struct Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics
+{
+	struct ScreenManager_eventSwitchBackCamera_Parms
+	{
+		int32 playerId;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Spilt Screen" },
+		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_playerId;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::NewProp_playerId = { "playerId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScreenManager_eventSwitchBackCamera_Parms, playerId), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::NewProp_playerId,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UScreenManager, nullptr, "SwitchBackCamera", nullptr, nullptr, Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::PropPointers), sizeof(Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::ScreenManager_eventSwitchBackCamera_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::Function_MetaDataParams), Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::ScreenManager_eventSwitchBackCamera_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UScreenManager_SwitchBackCamera()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UScreenManager_SwitchBackCamera_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UScreenManager::execSwitchBackCamera)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_playerId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchBackCamera(Z_Param_playerId);
+	P_NATIVE_END;
+}
+// End Class UScreenManager Function SwitchBackCamera
+
+// Begin Class UScreenManager Function SwitchInCamera
+struct Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics
+{
+	struct ScreenManager_eventSwitchInCamera_Parms
+	{
+		AActor* Camera;
+		int32 playerId;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Spilt Screen" },
+		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_playerId;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScreenManager_eventSwitchInCamera_Parms, Camera), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::NewProp_playerId = { "playerId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScreenManager_eventSwitchInCamera_Parms, playerId), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::NewProp_Camera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::NewProp_playerId,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UScreenManager, nullptr, "SwitchInCamera", nullptr, nullptr, Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::PropPointers), sizeof(Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::ScreenManager_eventSwitchInCamera_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::Function_MetaDataParams), Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::ScreenManager_eventSwitchInCamera_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UScreenManager_SwitchInCamera()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UScreenManager_SwitchInCamera_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UScreenManager::execSwitchInCamera)
+{
+	P_GET_OBJECT(AActor,Z_Param_Camera);
+	P_GET_PROPERTY(FIntProperty,Z_Param_playerId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchInCamera(Z_Param_Camera,Z_Param_playerId);
+	P_NATIVE_END;
+}
+// End Class UScreenManager Function SwitchInCamera
+
 // Begin Class UScreenManager Function UpdateLayout
 struct Z_Construct_UFunction_UScreenManager_UpdateLayout_Statics
 {
@@ -266,6 +357,8 @@ void UScreenManager::StaticRegisterNativesUScreenManager()
 		{ "CleanUp", &UScreenManager::execCleanUp },
 		{ "IniScreenManager", &UScreenManager::execIniScreenManager },
 		{ "SetMode", &UScreenManager::execSetMode },
+		{ "SwitchBackCamera", &UScreenManager::execSwitchBackCamera },
+		{ "SwitchInCamera", &UScreenManager::execSwitchInCamera },
 		{ "UpdateLayout", &UScreenManager::execUpdateLayout },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -300,12 +393,37 @@ struct Z_Construct_UClass_UScreenManager_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/ScreenManager.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ArrCameras_MetaData[] = {
-		{ "ModuleRelativePath", "Public/ScreenManager.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_pContainer_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraTargetMap_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Map to keep Track and look up cameras to their render targets\n" },
+#endif
+		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Map to keep Track and look up cameras to their render targets" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerToWidgetMap_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Map to keep Track and look up Camera Widegts to player Ids\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Map to keep Track and look up Camera Widegts to player Ids" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PreviousTargets_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Map to keep track of multiple camera switches.\n" },
+#endif
+		{ "ModuleRelativePath", "Public/ScreenManager.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Map to keep track of multiple camera switches." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Currentmode_MetaData[] = {
 		{ "ModuleRelativePath", "Public/ScreenManager.h" },
@@ -321,9 +439,16 @@ struct Z_Construct_UClass_UScreenManager_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ArrRenderTargets;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ArrCamerasArray_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ArrCamerasArray;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ArrCameras_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_ArrCameras;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_pContainer;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraTargetMap_ValueProp;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraTargetMap_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_CameraTargetMap;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerToWidgetMap_ValueProp;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerToWidgetMap_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_PlayerToWidgetMap;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PreviousTargets_ValueProp;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PreviousTargets_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_PreviousTargets;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_Currentmode_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Currentmode;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_cCameraTemplate;
@@ -335,6 +460,8 @@ struct Z_Construct_UClass_UScreenManager_Statics
 		{ &Z_Construct_UFunction_UScreenManager_CleanUp, "CleanUp" }, // 1783872852
 		{ &Z_Construct_UFunction_UScreenManager_IniScreenManager, "IniScreenManager" }, // 3093355073
 		{ &Z_Construct_UFunction_UScreenManager_SetMode, "SetMode" }, // 583250536
+		{ &Z_Construct_UFunction_UScreenManager_SwitchBackCamera, "SwitchBackCamera" }, // 3879196352
+		{ &Z_Construct_UFunction_UScreenManager_SwitchInCamera, "SwitchInCamera" }, // 2845832925
 		{ &Z_Construct_UFunction_UScreenManager_UpdateLayout, "UpdateLayout" }, // 1935935026
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -347,9 +474,16 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrRenderTargets = { "ArrRenderTargets", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, ArrRenderTargets), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ArrRenderTargets_MetaData), NewProp_ArrRenderTargets_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCamerasArray_Inner = { "ArrCamerasArray", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UCamWidget_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCamerasArray = { "ArrCamerasArray", nullptr, (EPropertyFlags)0x0040008000000008, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, ArrCamerasArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ArrCamerasArray_MetaData), NewProp_ArrCamerasArray_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCameras_Inner = { "ArrCameras", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCameras = { "ArrCameras", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, ArrCameras), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ArrCameras_MetaData), NewProp_ArrCameras_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_pContainer = { "pContainer", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, pContainer), Z_Construct_UClass_UContainerWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_pContainer_MetaData), NewProp_pContainer_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap_ValueProp = { "CameraTargetMap", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UTextureRenderTarget2D_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap_Key_KeyProp = { "CameraTargetMap_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap = { "CameraTargetMap", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, CameraTargetMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraTargetMap_MetaData), NewProp_CameraTargetMap_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap_ValueProp = { "PlayerToWidgetMap", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UCamWidget_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap_Key_KeyProp = { "PlayerToWidgetMap_Key", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap = { "PlayerToWidgetMap", nullptr, (EPropertyFlags)0x0040008000000008, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, PlayerToWidgetMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerToWidgetMap_MetaData), NewProp_PlayerToWidgetMap_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets_ValueProp = { "PreviousTargets", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UTextureRenderTarget2D_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets_Key_KeyProp = { "PreviousTargets_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets = { "PreviousTargets", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, PreviousTargets), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PreviousTargets_MetaData), NewProp_PreviousTargets_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_Currentmode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_Currentmode = { "Currentmode", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, Currentmode), Z_Construct_UEnum_BTeamProjectTilde_ECMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Currentmode_MetaData), NewProp_Currentmode_MetaData) }; // 3806085766
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UScreenManager_Statics::NewProp_cCameraTemplate = { "cCameraTemplate", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScreenManager, cCameraTemplate), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_cCameraTemplate_MetaData), NewProp_cCameraTemplate_MetaData) };
@@ -359,9 +493,16 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UScreenMa
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrRenderTargets,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCamerasArray_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCamerasArray,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCameras_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_ArrCameras,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_pContainer,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_CameraTargetMap,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PlayerToWidgetMap,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_PreviousTargets,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_Currentmode_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_Currentmode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScreenManager_Statics::NewProp_cCameraTemplate,
@@ -405,14 +546,14 @@ UScreenManager::~UScreenManager() {}
 // End Class UScreenManager
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics
+struct Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UScreenManager, UScreenManager::StaticClass, TEXT("UScreenManager"), &Z_Registration_Info_UClass_UScreenManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UScreenManager), 2897259667U) },
+		{ Z_Construct_UClass_UScreenManager, UScreenManager::StaticClass, TEXT("UScreenManager"), &Z_Registration_Info_UClass_UScreenManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UScreenManager), 2593520121U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_3682362512(TEXT("/Script/BTeamProjectTilde"),
-	Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_2280627044(TEXT("/Script/BTeamProjectTilde"),
+	Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_ScreenManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

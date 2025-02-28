@@ -19,6 +19,47 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_BTeamProjectTilde();
 // End Cross Module References
 
+// Begin Class UCamWidget Function GetRenderTarget
+struct Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics
+{
+	struct CamWidget_eventGetRenderTarget_Parms
+	{
+		UTextureRenderTarget2D* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/CamWidget.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CamWidget_eventGetRenderTarget_Parms, ReturnValue), Z_Construct_UClass_UTextureRenderTarget2D_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCamWidget, nullptr, "GetRenderTarget", nullptr, nullptr, Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::CamWidget_eventGetRenderTarget_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::CamWidget_eventGetRenderTarget_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UCamWidget_GetRenderTarget()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCamWidget_GetRenderTarget_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCamWidget::execGetRenderTarget)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(UTextureRenderTarget2D**)Z_Param__Result=P_THIS->GetRenderTarget();
+	P_NATIVE_END;
+}
+// End Class UCamWidget Function GetRenderTarget
+
 // Begin Class UCamWidget Function SetRenderTarget
 struct Z_Construct_UFunction_UCamWidget_SetRenderTarget_Statics
 {
@@ -61,12 +102,56 @@ DEFINE_FUNCTION(UCamWidget::execSetRenderTarget)
 }
 // End Class UCamWidget Function SetRenderTarget
 
+// Begin Class UCamWidget Function SwitchRenderTarget
+struct Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics
+{
+	struct CamWidget_eventSwitchRenderTarget_Parms
+	{
+		UTextureRenderTarget2D* newTarget;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/CamWidget.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_newTarget;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::NewProp_newTarget = { "newTarget", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CamWidget_eventSwitchRenderTarget_Parms, newTarget), Z_Construct_UClass_UTextureRenderTarget2D_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::NewProp_newTarget,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCamWidget, nullptr, "SwitchRenderTarget", nullptr, nullptr, Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::PropPointers), sizeof(Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::CamWidget_eventSwitchRenderTarget_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::CamWidget_eventSwitchRenderTarget_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UCamWidget_SwitchRenderTarget()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCamWidget_SwitchRenderTarget_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCamWidget::execSwitchRenderTarget)
+{
+	P_GET_OBJECT(UTextureRenderTarget2D,Z_Param_newTarget);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchRenderTarget(Z_Param_newTarget);
+	P_NATIVE_END;
+}
+// End Class UCamWidget Function SwitchRenderTarget
+
 // Begin Class UCamWidget
 void UCamWidget::StaticRegisterNativesUCamWidget()
 {
 	UClass* Class = UCamWidget::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "GetRenderTarget", &UCamWidget::execGetRenderTarget },
 		{ "SetRenderTarget", &UCamWidget::execSetRenderTarget },
+		{ "SwitchRenderTarget", &UCamWidget::execSwitchRenderTarget },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -105,7 +190,9 @@ struct Z_Construct_UClass_UCamWidget_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UCamWidget_GetRenderTarget, "GetRenderTarget" }, // 1356725
 		{ &Z_Construct_UFunction_UCamWidget_SetRenderTarget, "SetRenderTarget" }, // 2554704078
+		{ &Z_Construct_UFunction_UCamWidget_SwitchRenderTarget, "SwitchRenderTarget" }, // 3896162806
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -160,14 +247,14 @@ UCamWidget::~UCamWidget() {}
 // End Class UCamWidget
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics
+struct Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCamWidget, UCamWidget::StaticClass, TEXT("UCamWidget"), &Z_Registration_Info_UClass_UCamWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCamWidget), 3388182858U) },
+		{ Z_Construct_UClass_UCamWidget, UCamWidget::StaticClass, TEXT("UCamWidget"), &Z_Registration_Info_UClass_UCamWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCamWidget), 2305955526U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_77676597(TEXT("/Script/BTeamProjectTilde"),
-	Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_2505180247(TEXT("/Script/BTeamProjectTilde"),
+	Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_CamWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

@@ -46,3 +46,50 @@ void ASplitScreenGamode::AddUIWidgetToScreen(UWidget* widget_, int Zorder, int v
 	pScreenManager->AddUIWidgetToScreen(widget_, Zorder, viewPort);
 
 }
+
+void ASplitScreenGamode::SwitchInCamera(AActor* Camera, int playerId)
+{
+    int viewPort = GetCameraViewport(playerId);
+    pScreenManager->SwitchInCamera(Camera, viewPort);
+}
+
+void ASplitScreenGamode::SwitchBackCamera(int playerId)
+{
+    int viewPort = GetCameraViewport(playerId);
+    pScreenManager->SwitchBackCamera(viewPort);
+}
+
+int ASplitScreenGamode::GetAssignedViewport(int PlayerID)
+{
+    if (PlayerID < 0) { return 0; }
+
+    switch (eCurrentmode) {
+    case ECMode::OneCamera:
+        return 0;
+        break;
+    case ECMode::TwoCameras:
+        return (PlayerID < 2) ? 1 : 2;
+        break;
+    case ECMode::FourCameras:
+        return PlayerID + 1;
+        break;
+    }
+    return 0;// default return
+}
+
+int ASplitScreenGamode::GetCameraViewport(int PlayerID)
+{
+
+    switch (eCurrentmode) {
+    case ECMode::OneCamera:
+        return 0;
+        break;
+    case ECMode::TwoCameras:
+        return (PlayerID < 2) ? 0 : 1;
+        break;
+    case ECMode::FourCameras:
+        return PlayerID;
+        break;
+    }
+    return 0;
+}

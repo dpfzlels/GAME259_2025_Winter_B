@@ -17,6 +17,7 @@ BTEAMPROJECTTILDE_API UClass* Z_Construct_UClass_UContainerWidget_NoRegister();
 BTEAMPROJECTTILDE_API UClass* Z_Construct_UClass_UScreenManager_NoRegister();
 BTEAMPROJECTTILDE_API UEnum* Z_Construct_UEnum_BTeamProjectTilde_ECMode();
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 UMG_API UClass* Z_Construct_UClass_UWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BTeamProjectTilde();
@@ -83,6 +84,98 @@ DEFINE_FUNCTION(ASplitScreenGamode::execAddUIWidgetToScreen)
 	P_NATIVE_END;
 }
 // End Class ASplitScreenGamode Function AddUIWidgetToScreen
+
+// Begin Class ASplitScreenGamode Function GetAssignedViewport
+struct Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics
+{
+	struct SplitScreenGamode_eventGetAssignedViewport_Parms
+	{
+		int32 PlayerID;
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/SplitScreenGamode.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerID;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::NewProp_PlayerID = { "PlayerID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventGetAssignedViewport_Parms, PlayerID), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventGetAssignedViewport_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::NewProp_PlayerID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASplitScreenGamode, nullptr, "GetAssignedViewport", nullptr, nullptr, Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::SplitScreenGamode_eventGetAssignedViewport_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::SplitScreenGamode_eventGetAssignedViewport_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASplitScreenGamode::execGetAssignedViewport)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetAssignedViewport(Z_Param_PlayerID);
+	P_NATIVE_END;
+}
+// End Class ASplitScreenGamode Function GetAssignedViewport
+
+// Begin Class ASplitScreenGamode Function GetCameraViewport
+struct Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics
+{
+	struct SplitScreenGamode_eventGetCameraViewport_Parms
+	{
+		int32 PlayerID;
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/SplitScreenGamode.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayerID;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::NewProp_PlayerID = { "PlayerID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventGetCameraViewport_Parms, PlayerID), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventGetCameraViewport_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::NewProp_PlayerID,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASplitScreenGamode, nullptr, "GetCameraViewport", nullptr, nullptr, Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::SplitScreenGamode_eventGetCameraViewport_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::SplitScreenGamode_eventGetCameraViewport_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASplitScreenGamode::execGetCameraViewport)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_PlayerID);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetCameraViewport(Z_Param_PlayerID);
+	P_NATIVE_END;
+}
+// End Class ASplitScreenGamode Function GetCameraViewport
 
 // Begin Class ASplitScreenGamode Function IniScreen
 struct Z_Construct_UFunction_ASplitScreenGamode_IniScreen_Statics
@@ -172,14 +265,121 @@ DEFINE_FUNCTION(ASplitScreenGamode::execSetMode)
 }
 // End Class ASplitScreenGamode Function SetMode
 
+// Begin Class ASplitScreenGamode Function SwitchBackCamera
+struct Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics
+{
+	struct SplitScreenGamode_eventSwitchBackCamera_Parms
+	{
+		int32 playerId;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Spilt Screen" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Wrapper Function to Switch Back Widget to the screen\n" },
+#endif
+		{ "ModuleRelativePath", "Public/SplitScreenGamode.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Wrapper Function to Switch Back Widget to the screen" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_playerId;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::NewProp_playerId = { "playerId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventSwitchBackCamera_Parms, playerId), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::NewProp_playerId,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASplitScreenGamode, nullptr, "SwitchBackCamera", nullptr, nullptr, Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::SplitScreenGamode_eventSwitchBackCamera_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::SplitScreenGamode_eventSwitchBackCamera_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASplitScreenGamode::execSwitchBackCamera)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_playerId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchBackCamera(Z_Param_playerId);
+	P_NATIVE_END;
+}
+// End Class ASplitScreenGamode Function SwitchBackCamera
+
+// Begin Class ASplitScreenGamode Function SwitchInCamera
+struct Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics
+{
+	struct SplitScreenGamode_eventSwitchInCamera_Parms
+	{
+		AActor* Camera;
+		int32 playerId;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Spilt Screen" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Wrapper Function to Switch a Camera Widget to the screen\n" },
+#endif
+		{ "ModuleRelativePath", "Public/SplitScreenGamode.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Wrapper Function to Switch a Camera Widget to the screen" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_playerId;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventSwitchInCamera_Parms, Camera), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::NewProp_playerId = { "playerId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SplitScreenGamode_eventSwitchInCamera_Parms, playerId), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::NewProp_Camera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::NewProp_playerId,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASplitScreenGamode, nullptr, "SwitchInCamera", nullptr, nullptr, Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::SplitScreenGamode_eventSwitchInCamera_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::SplitScreenGamode_eventSwitchInCamera_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASplitScreenGamode::execSwitchInCamera)
+{
+	P_GET_OBJECT(AActor,Z_Param_Camera);
+	P_GET_PROPERTY(FIntProperty,Z_Param_playerId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchInCamera(Z_Param_Camera,Z_Param_playerId);
+	P_NATIVE_END;
+}
+// End Class ASplitScreenGamode Function SwitchInCamera
+
 // Begin Class ASplitScreenGamode
 void ASplitScreenGamode::StaticRegisterNativesASplitScreenGamode()
 {
 	UClass* Class = ASplitScreenGamode::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AddUIWidgetToScreen", &ASplitScreenGamode::execAddUIWidgetToScreen },
+		{ "GetAssignedViewport", &ASplitScreenGamode::execGetAssignedViewport },
+		{ "GetCameraViewport", &ASplitScreenGamode::execGetCameraViewport },
 		{ "IniScreen", &ASplitScreenGamode::execIniScreen },
 		{ "SetMode", &ASplitScreenGamode::execSetMode },
+		{ "SwitchBackCamera", &ASplitScreenGamode::execSwitchBackCamera },
+		{ "SwitchInCamera", &ASplitScreenGamode::execSwitchInCamera },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -227,8 +427,12 @@ struct Z_Construct_UClass_ASplitScreenGamode_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASplitScreenGamode_AddUIWidgetToScreen, "AddUIWidgetToScreen" }, // 2858426862
+		{ &Z_Construct_UFunction_ASplitScreenGamode_GetAssignedViewport, "GetAssignedViewport" }, // 4052433987
+		{ &Z_Construct_UFunction_ASplitScreenGamode_GetCameraViewport, "GetCameraViewport" }, // 2227623050
 		{ &Z_Construct_UFunction_ASplitScreenGamode_IniScreen, "IniScreen" }, // 2071581617
 		{ &Z_Construct_UFunction_ASplitScreenGamode_SetMode, "SetMode" }, // 2212606762
+		{ &Z_Construct_UFunction_ASplitScreenGamode_SwitchBackCamera, "SwitchBackCamera" }, // 3083509214
+		{ &Z_Construct_UFunction_ASplitScreenGamode_SwitchInCamera, "SwitchInCamera" }, // 2544604417
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -286,14 +490,14 @@ ASplitScreenGamode::~ASplitScreenGamode() {}
 // End Class ASplitScreenGamode
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics
+struct Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASplitScreenGamode, ASplitScreenGamode::StaticClass, TEXT("ASplitScreenGamode"), &Z_Registration_Info_UClass_ASplitScreenGamode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASplitScreenGamode), 3863859370U) },
+		{ Z_Construct_UClass_ASplitScreenGamode, ASplitScreenGamode::StaticClass, TEXT("ASplitScreenGamode"), &Z_Registration_Info_UClass_ASplitScreenGamode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASplitScreenGamode), 2688694203U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_1105240108(TEXT("/Script/BTeamProjectTilde"),
-	Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kevin_Documents_Notes_Semester_4_GAME_PRODUCTON_REPO_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_4152592492(TEXT("/Script/BTeamProjectTilde"),
+	Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Humber_Sem_4_Game_Production_2_GAME259_2025_Winter_B_BTeamProjectTilde_Source_BTeamProjectTilde_Public_SplitScreenGamode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
